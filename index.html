@@ -640,3 +640,5 @@ document.addEventListener("input",e=>{if(e.target.id==="vq")vlist()});
 document.addEventListener("change",e=>{if(e.target.id!=="vimp"||!e.target.files[0])return;const fr=new FileReader();fr.onload=()=>{try{const o=JSON.parse(fr.result),ids=new Set(S.vocab.map(x=>x.id));(o.vocab||[]).forEach(x=>{if(x&&x.id&&!ids.has(x.id))S.vocab.push(x)});S.done=Object.assign({},o.done||{},S.done);S.notes=Object.assign({},o.notes||{},S.notes);save();vlist();$("vmsg").textContent="Đã nhập sao lưu."}catch(err){$("vmsg").textContent="File sao lưu không hợp lệ."}};fr.readAsText(e.target.files[0])});
 draw();
 </script></body></html>
+
+
